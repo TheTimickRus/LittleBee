@@ -1,8 +1,9 @@
-package org.exTeam.Core.Products.Hive.Components;
+package org.exTeam.business.products.hive.сomponents;
 
+import org.exTeam.business.products.hive.Hive;
 import java.awt.*;
 
-public class Components {
+public class Components extends Hive {
     private String material;
     private String manufacturer;
     private Color color;

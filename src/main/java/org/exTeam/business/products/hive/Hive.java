@@ -1,6 +1,8 @@
-package org.exTeam.Core.Products.Hive;
+package org.exTeam.business.products.hive;
 
-public class Hive {
+import org.exTeam.business.products.Product;
+
+public class Hive extends Product {
     private int size;
     private int framesCount;
     private int framesSystem;

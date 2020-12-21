@@ -1,4 +1,4 @@
-package org.exTeam.Core;
+package org.exTeam.business;
 
 public class Address {
     private String country;
@@ -9,7 +9,6 @@ public class Address {
     public String getCountry() {
         return country;
     }
-
     public void setCountry(String country) {
         this.country = country;
     }
@@ -17,7 +16,6 @@ public class Address {
     public String getCity() {
         return city;
     }
-
     public void setCity(String city) {
         this.city = city;
     }
@@ -25,7 +23,6 @@ public class Address {
     public String getHouseNumber() {
         return houseNumber;
     }
-
     public void setHouseNumber(String houseNumber) {
         this.houseNumber = houseNumber;
     }
@@ -33,7 +30,6 @@ public class Address {
     public String getApartmentNumber() {
         return apartmentNumber;
     }
-
     public void setApartmentNumber(String apartmentNumber) {
         this.apartmentNumber = apartmentNumber;
     }

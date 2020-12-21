@@ -1,26 +1,21 @@
 package org.exTeam.dto;
 
-import org.exTeam.Core.Products.Product;
-
 import java.util.UUID;
 
-public class BasketDTO {
-
-    private UUID basketUUID;
+public class OrderDTO {
+    private UUID orderUUID;
     private int vendorCode;
 
-    public UUID getBasketUUID() {
-        return basketUUID;
+    public UUID getOrderUUID() {
+        return orderUUID;
     }
-
-    public void setBasketUUID(UUID basketUUID) {
-        this.basketUUID = basketUUID;
+    public void setOrderUUID(UUID orderUUID) {
+        this.orderUUID = orderUUID;
     }
 
     public int getVendorCode() {
         return vendorCode;
     }
-
     public void setVendorCode(int vendorCode) {
         this.vendorCode = vendorCode;
     }

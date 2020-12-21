@@ -1,4 +1,4 @@
-package org.exTeam.Core.Order;
+package org.exTeam.business.order;
 
 public class Status {
     private boolean notPaid;
@@ -10,7 +10,6 @@ public class Status {
     public boolean isNotPaid() {
         return notPaid;
     }
-
     public void setNotPaid(boolean notPaid) {
         this.notPaid = notPaid;
     }
@@ -18,7 +17,6 @@ public class Status {
     public boolean isPaid() {
         return paid;
     }
-
     public void setPaid(boolean paid) {
         this.paid = paid;
     }
@@ -26,7 +24,6 @@ public class Status {
     public boolean isDelivered() {
         return delivered;
     }
-
     public void setDelivered(boolean delivered) {
         this.delivered = delivered;
     }
@@ -34,7 +31,6 @@ public class Status {
     public boolean isPendingIssue() {
         return pendingIssue;
     }
-
     public void setPendingIssue(boolean pendingIssue) {
         this.pendingIssue = pendingIssue;
     }
@@ -42,7 +38,6 @@ public class Status {
     public boolean isIssued() {
         return issued;
     }
-
     public void setIssued(boolean issued) {
         this.issued = issued;
     }

@@ -1,4 +1,4 @@
-package org.exTeam.Core;
+package org.exTeam.business;
 
 import java.util.UUID;
 
@@ -9,14 +9,19 @@ public class Buyer {
     private String phone;
     private Address address;
 
+
     public Buyer() {
         this.buyerId = UUID.randomUUID();
+    }
+
+
+    public UUID getBuyerId() {
+        return buyerId;
     }
 
     public String getFullName() {
         return fullName;
     }
-
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
@@ -24,7 +29,6 @@ public class Buyer {
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
@@ -32,7 +36,6 @@ public class Buyer {
     public String getPhone() {
         return phone;
     }
-
     public void setPhone(String phone) {
         this.phone = phone;
     }
@@ -40,17 +43,12 @@ public class Buyer {
     public Address getAddress() {
         return address;
     }
-
     public void setAddress(Address address) {
         this.address = address;
     }
 
-    public UUID getBuyerId() {
-        return buyerId;
-    }
-    //==============================================================
 
-    public boolean Register() {
-        return true;
+    public void Register() {
+
     }
 }

@@ -1,4 +1,4 @@
-package org.exTeam.Core.Products;
+package org.exTeam.business.products;
 
 public class Product {
     private int vendorCode;
@@ -9,7 +9,6 @@ public class Product {
     public int getVendorCode() {
         return vendorCode;
     }
-
     public void setVendorCode(int vendorCode) {
         this.vendorCode = vendorCode;
     }
@@ -17,7 +16,6 @@ public class Product {
     public String getName() {
         return Name;
     }
-
     public void setName(String name) {
         Name = name;
     }
@@ -25,7 +23,6 @@ public class Product {
     public int getPrice() {
         return Price;
     }
-
     public void setPrice(int price) {
         Price = price;
     }
@@ -33,7 +30,6 @@ public class Product {
     public int getInStoke() {
         return inStoke;
     }
-
     public void setInStoke(int inStoke) {
         this.inStoke = inStoke;
     }

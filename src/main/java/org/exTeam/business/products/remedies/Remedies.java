@@ -1,4 +1,4 @@
-package org.exTeam.Core.Products.Remedies;
+package org.exTeam.business.products.remedies;
 
 public class Remedies {
     private String manufacturer;

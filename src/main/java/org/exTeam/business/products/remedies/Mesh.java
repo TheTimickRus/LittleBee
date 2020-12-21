@@ -1,8 +1,8 @@
-package org.exTeam.Core.Products.Remedies;
+package org.exTeam.business.products.remedies;
 
 import java.awt.*;
 
-public class Costume {
+public class Mesh extends Remedies {
     private String type;
     private Color color;
 
