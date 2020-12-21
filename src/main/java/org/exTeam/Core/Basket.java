@@ -1,8 +1,19 @@
 package org.exTeam.Core;
 
+import java.util.UUID;
+
 public class Basket {
+    private UUID uuid;
     private double totalCost;
     private String coupon;
+
+    public Basket() {
+        this.uuid = UUID.randomUUID();
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
 
     public double getTotalCost() {
         return totalCost;

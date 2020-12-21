@@ -1,10 +1,17 @@
 package org.exTeam.Core;
 
+import java.util.UUID;
+
 public class Buyer {
+    private UUID buyerId;
     private String fullName;
     private String email;
     private String phone;
     private Address address;
+
+    public Buyer() {
+        this.buyerId = UUID.randomUUID();
+    }
 
     public String getFullName() {
         return fullName;
@@ -38,6 +45,9 @@ public class Buyer {
         this.address = address;
     }
 
+    public UUID getBuyerId() {
+        return buyerId;
+    }
     //==============================================================
 
     public boolean Register() {
