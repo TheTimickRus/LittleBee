@@ -3,11 +3,13 @@ package org.exTeam.business.products.hive.сomponents;
 import org.exTeam.business.products.hive.Hive;
 import java.awt.*;
 
-public class Components extends Hive {
-    private String material;
-    private String manufacturer;
-    private Color color;
+/* Компоненты улея */
+public abstract class Components extends Hive {
+    private String material; // Материал
+    private String manufacturer; // Мануфактура
+    private Color color; // Цвет
 
+    /* Свойства */
     public String getMaterial() {
         return material;
     }

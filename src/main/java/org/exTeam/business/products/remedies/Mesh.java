@@ -2,10 +2,22 @@ package org.exTeam.business.products.remedies;
 
 import java.awt.*;
 
+/* Сетка лицевая */
 public class Mesh extends Remedies {
-    private String type;
-    private Color color;
+    private String type; // Тип
+    private Color color; // Цвет
 
+    /* Конструктор */
+    // Стандартный конструктор
+    public Mesh() { }
+
+    // Конструктор с параметрами
+    public Mesh(String type, Color color) {
+        this.type = type;
+        this.color = color;
+    }
+
+    /* Свойства */
     public String getType() {
         return type;
     }

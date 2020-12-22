@@ -1,4 +1,4 @@
 package org.exTeam.business.products.hive.сomponents;
 
-public class Shop {
-}
+/* Магазин улея */
+public class Shop extends Components { }

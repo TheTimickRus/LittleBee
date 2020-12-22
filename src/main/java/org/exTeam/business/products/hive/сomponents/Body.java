@@ -1,4 +1,4 @@
 package org.exTeam.business.products.hive.сomponents;
 
-public class Body {
-}
+/* Корпус улея */
+public class Body extends Components { }

@@ -1,4 +1,4 @@
 package org.exTeam.business.products.hive.сomponents;
 
-public class Roof {
-}
+/* Крышка улея */
+public class Roof extends Components { }

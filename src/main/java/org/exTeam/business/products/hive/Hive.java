@@ -2,11 +2,13 @@ package org.exTeam.business.products.hive;
 
 import org.exTeam.business.products.Product;
 
+/* Улей */
 public class Hive extends Product {
-    private int size;
-    private int framesCount;
-    private int framesSystem;
+    private int size; // Размер
+    private int framesCount; // Количество рамок
+    private int framesSystem; // Система рамок
 
+    /* Свойства */
     public int getSize() {
         return size;
     }

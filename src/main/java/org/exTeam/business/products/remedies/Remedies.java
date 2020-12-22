@@ -1,10 +1,12 @@
 package org.exTeam.business.products.remedies;
 
-public class Remedies {
-    private String manufacturer;
-    private String material;
-    private String size;
+/* Средства защиты */
+public abstract class Remedies {
+    private String manufacturer; // Мануфактура
+    private String material; // Материал
+    private String size; // Размер
 
+    /* Свойства */
     public String getManufacturer() {
         return manufacturer;
     }

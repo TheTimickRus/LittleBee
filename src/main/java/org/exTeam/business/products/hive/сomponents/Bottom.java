@@ -1,4 +1,4 @@
 package org.exTeam.business.products.hive.сomponents;
 
-public class Bottom {
-}
+/* Дно улея */
+public class Bottom extends Components { }

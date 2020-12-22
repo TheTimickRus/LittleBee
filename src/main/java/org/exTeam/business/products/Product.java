@@ -1,35 +1,43 @@
 package org.exTeam.business.products;
 
-public class Product {
-    private int vendorCode;
-    private String Name;
-    private int Price;
-    private int inStoke;
+import java.math.BigDecimal;
 
-    public int getVendorCode() {
-        return vendorCode;
+/* Товары */
+public abstract class Product {
+    private int article; // Артикул
+    private String name; // Название товара
+    private BigDecimal price; // Цена товара (рубли)
+    private int inStoke; // Осталось на складе (штук)
+
+    /* Свойства */
+    public int getArticle() {
+        return article;
     }
-    public void setVendorCode(int vendorCode) {
-        this.vendorCode = vendorCode;
+
+    public void setArticle(int article) {
+        this.article = article;
     }
 
     public String getName() {
-        return Name;
-    }
-    public void setName(String name) {
-        Name = name;
+        return name;
     }
 
-    public int getPrice() {
-        return Price;
+    public void setName(String name) {
+        this.name = name;
     }
-    public void setPrice(int price) {
-        Price = price;
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     public int getInStoke() {
         return inStoke;
     }
+
     public void setInStoke(int inStoke) {
         this.inStoke = inStoke;
     }

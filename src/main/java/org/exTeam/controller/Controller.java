@@ -1,14 +1,13 @@
 package org.exTeam.controller;
 
-import org.aspectj.weaver.ast.Or;
-import org.exTeam.business.Address;
-import org.exTeam.business.Cart;
 import org.exTeam.business.Buyer;
-import org.exTeam.business.order.Order;
+import org.exTeam.business.Cart;
+import org.exTeam.business.Order;
 import org.exTeam.dto.BuyerDTO;
 import org.exTeam.dto.CartDTO;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 @RestController
@@ -17,7 +16,6 @@ public class Controller {
     public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
         return "Hello, " + name + "!";
     }
-
 
     @PostMapping("/registerBuyer")
     public Buyer registerBuyer(@RequestBody BuyerDTO buyerDTO) {
@@ -31,7 +29,6 @@ public class Controller {
         return new Buyer();
     }
 
-
     @PostMapping("/addToCart")
     public Cart addToCart(@RequestBody CartDTO cartDTO) {
         //TODO здесь будет метод, который отдает корзину после добавления в нее товара
@@ -44,10 +41,9 @@ public class Controller {
         return new Cart();
     }
 
-
     @PostMapping("/findOrder")
     public Order getOrderById(@RequestParam(value = "id") UUID id) {
         //TODO логика поиска заказа
-        return new Order();
+        return new Order(new ArrayList<>());
     }
 }
