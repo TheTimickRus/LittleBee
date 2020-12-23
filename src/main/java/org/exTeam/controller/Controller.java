@@ -52,46 +52,28 @@ public class Controller {
     /* Работа с корзиной */
     // Добавить товар в корзину по артиклу
     @PostMapping("/addProductInCart")
-    public Cart addProductInCart(@RequestParam(value = "article") int article, @RequestParam(value = "id") String id) {
-        try {
-            Product tmpProduct = ServiceWorker.products.stream()
-                    .filter(product -> product.getArticle() == article)
-                    .collect(Collectors.toList()).get(0);
+    public Cart addProductInCart(@RequestParam(value = "article") int article, @RequestParam(value = "id") UUID id) {
+        Product tmpProduct = ServiceWorker.products.stream().filter(product -> product.getArticle() == article).findFirst().get();
+        Cart tmpCart = ServiceWorker.carts.stream().filter(cart -> cart.getId().equals(id)).findFirst().get();
 
-            Cart tmpCart = ServiceWorker.carts.stream()
-                    .filter(cart -> cart.getId().equals(UUID.fromString(id)))
-                    .collect(Collectors.toList()).get(0);
+        ServiceWorker.carts.remove(tmpCart);
+        tmpCart.addProduct(tmpProduct);
+        ServiceWorker.carts.add(tmpCart);
 
-            int index = ServiceWorker.carts.indexOf(tmpCart);
-            tmpCart.addProduct(tmpProduct);
-            ServiceWorker.carts.set(index, tmpCart);
-
-            return tmpCart;
-        } catch (Exception ex) {
-            return null;
-        }
+        return tmpCart;
     }
 
     // Удалить товар из корзины по артиклу
     @PostMapping("/removeProductInCart")
-    public Cart removeProductInCart(@RequestParam(value = "article") int article, @RequestParam(value = "id") String id) {
-        try {
-            Cart tmpCart = ServiceWorker.carts.stream()
-                    .filter(cart -> cart.getId().equals(UUID.fromString(id)))
-                    .collect(Collectors.toList()).get(0);
+    public Cart removeProductInCart(@RequestParam(value = "article") int article, @RequestParam(value = "id") UUID id) {
+        Cart tmpCart = ServiceWorker.carts.stream().filter(cart -> cart.getId().equals(id)).findFirst().get();
+        Product tmpProduct = tmpCart.getProducts().stream().filter(product -> product.getArticle() == article).findFirst().get();
 
-            Product tmpProduct = ServiceWorker.products.stream()
-                    .filter(product -> product.getArticle() == article)
-                    .collect(Collectors.toList()).get(0);
+        ServiceWorker.carts.remove(tmpCart);
+        tmpCart.removeProduct(tmpProduct);
+        ServiceWorker.carts.add(tmpCart);
 
-            int index = ServiceWorker.carts.indexOf(tmpCart);
-            tmpCart.removeProduct(tmpProduct);
-            ServiceWorker.carts.set(index, tmpCart);
-
-            return tmpCart;
-        } catch (Exception ex) {
-            return null;
-        }
+        return tmpCart;
     }
 
     // Получить корзину по ID

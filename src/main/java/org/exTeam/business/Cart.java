@@ -8,32 +8,20 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class Cart {
-    private UUID id; // ID корзины
-    private BigDecimal totalCost; // Стоимость товаров в корзине
-    private BigDecimal totalCostWithCoupon; // Стоимость товаров в корзине со скидкой по купону
-    private Coupon coupon; // Купон
+    private UUID id = UUID.randomUUID();; // ID корзины
+    private BigDecimal totalCost = new BigDecimal(0); // Стоимость товаров в корзине
+    private BigDecimal totalCostWithCoupon = new BigDecimal(0);; // Стоимость товаров в корзине со скидкой по купону
+    private Coupon coupon = Coupon.SALE00; // Купон
     private UUID buyerId; // ID покупателя
 
     private ArrayList<Product> products = new ArrayList<>(); // Коллекция товаров в корзине
 
     /* Конструктор */
     // Стандартный конструктор
-    public Cart() {
-        this.id = UUID.randomUUID();
-        coupon = Coupon.SALE00;
-    }
+    public Cart() { }
 
-    // Конструктор с параметрами №1
-    public Cart(ArrayList<Product> products) {
-        this.id = UUID.randomUUID();
-        coupon = Coupon.SALE00;
-        this.products = products;
-    }
-
-    // Конструктор с параметрами №2
+    // Конструктор с параметрами
     public Cart(UUID buyerId) {
-        this.id = UUID.randomUUID();
-        coupon = Coupon.SALE00;
         this.buyerId = buyerId;
     }
 
@@ -41,13 +29,13 @@ public class Cart {
     // Добавляем новый продукт в корзину
     public void addProduct(Product product) {
         products.add(product);
-        totalCost.add(product.getPrice());
+        totalCost = totalCost.add(product.getPrice());
     }
 
     // Удаляем продукт из корзины
     public void removeProduct(Product product) {
         products.remove(product);
-        totalCost.remainder(product.getPrice());
+        totalCost = totalCost.remainder(product.getPrice());
     }
 
     // Применяем купон
@@ -68,6 +56,7 @@ public class Cart {
                 ", totalCost=" + totalCost +
                 ", totalCostWithCoupon=" + totalCostWithCoupon +
                 ", coupon=" + coupon +
+                ", buyerId=" + buyerId +
                 ", products=" + products +
                 '}';
     }
@@ -95,5 +84,9 @@ public class Cart {
 
     public void setBuyerId(UUID buyerId) {
         this.buyerId = buyerId;
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
     }
 }
