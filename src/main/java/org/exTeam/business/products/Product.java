@@ -9,6 +9,25 @@ public abstract class Product {
     private BigDecimal price; // Цена товара (рубли)
     private int inStoke; // Осталось на складе (штук)
 
+    /* Конструктор */
+    public Product(int article, String name, BigDecimal price, int inStoke) {
+        this.article = article;
+        this.name = name;
+        this.price = price;
+        this.inStoke = inStoke;
+    }
+
+    /* Методы */
+    @Override
+    public String toString() {
+        return "Product{" +
+                "article=" + article +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", inStoke=" + inStoke +
+                '}';
+    }
+
     /* Свойства */
     public int getArticle() {
         return article;

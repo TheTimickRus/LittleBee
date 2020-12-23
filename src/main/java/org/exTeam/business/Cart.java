@@ -12,6 +12,7 @@ public class Cart {
     private BigDecimal totalCost; // Стоимость товаров в корзине
     private BigDecimal totalCostWithCoupon; // Стоимость товаров в корзине со скидкой по купону
     private Coupon coupon; // Купон
+    private UUID buyerId; // ID покупателя
 
     private ArrayList<Product> products = new ArrayList<>(); // Коллекция товаров в корзине
 
@@ -22,22 +23,31 @@ public class Cart {
         coupon = Coupon.SALE00;
     }
 
+    // Конструктор с параметрами №1
     public Cart(ArrayList<Product> products) {
         this.id = UUID.randomUUID();
         coupon = Coupon.SALE00;
         this.products = products;
     }
 
+    // Конструктор с параметрами №2
+    public Cart(UUID buyerId) {
+        this.id = UUID.randomUUID();
+        coupon = Coupon.SALE00;
+        this.buyerId = buyerId;
+    }
+
     /* Методы */
     // Добавляем новый продукт в корзину
-    public void add(Product product) {
+    public void addProduct(Product product) {
         products.add(product);
         totalCost.add(product.getPrice());
     }
 
     // Удаляем продукт из корзины
-    public void remove(Product product) {
+    public void removeProduct(Product product) {
         products.remove(product);
+        totalCost.remainder(product.getPrice());
     }
 
     // Применяем купон
@@ -77,5 +87,13 @@ public class Cart {
 
     public Coupon getCoupon() {
         return coupon;
+    }
+
+    public UUID getBuyerId() {
+        return buyerId;
+    }
+
+    public void setBuyerId(UUID buyerId) {
+        this.buyerId = buyerId;
     }
 }

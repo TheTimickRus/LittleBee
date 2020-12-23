@@ -1,10 +1,20 @@
 package org.exTeam.business.products.remedies;
 
+import org.exTeam.business.products.Product;
+
+import java.math.BigDecimal;
+
 /* Средства защиты */
-public abstract class Remedies {
+public abstract class Remedies extends Product {
     private String manufacturer; // Мануфактура
     private String material; // Материал
     private String size; // Размер
+
+    /* Конструктор */
+    // Стандартный конструктор
+    public Remedies(int article, String name, BigDecimal price, int inStoke) {
+        super(article, name, price, inStoke);
+    }
 
     /* Свойства */
     public String getManufacturer() {

@@ -10,6 +10,7 @@ public class Buyer {
     private String email; // EMAIL
     private String phone; // Номер телефона
     private Address address; // Адрес
+    private UUID cartId; // ID корзины покупателя
 
     /* Конструктор */
     // Стандартный конструктор
@@ -27,8 +28,19 @@ public class Buyer {
     }
 
     /* Методы */
-    public void Register() throws Exception {
-        throw new Exception("Метод не реализован :(");
+    // Тестовый вывод
+
+
+    @Override
+    public String toString() {
+        return "Buyer{" +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address=" + address +
+                ", cartId=" + cartId +
+                '}';
     }
 
     /* Свойства */
@@ -66,5 +78,13 @@ public class Buyer {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public UUID getCartId() {
+        return cartId;
+    }
+
+    public void setCartId(UUID cartId) {
+        this.cartId = cartId;
     }
 }

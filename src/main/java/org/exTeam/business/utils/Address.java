@@ -24,6 +24,20 @@ public class Address {
         this.apartmentNumber = apartmentNumber;
     }
 
+    /* Методы */
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "country='" + country + '\'' +
+                ", region='" + region + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", houseNumber='" + houseNumber + '\'' +
+                ", apartmentNumber='" + apartmentNumber + '\'' +
+                '}';
+    }
+
     /* Свойства */
     public String getCountry() {
         return country;

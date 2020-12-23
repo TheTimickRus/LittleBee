@@ -1,6 +1,7 @@
 package org.exTeam.business.products.remedies;
 
 import java.awt.*;
+import java.math.BigDecimal;
 
 /* Сетка лицевая */
 public class Mesh extends Remedies {
@@ -9,12 +10,11 @@ public class Mesh extends Remedies {
 
     /* Конструктор */
     // Стандартный конструктор
-    public Mesh() { }
+    public Mesh(int article, String name, BigDecimal price, int inStoke) {
+        super(article, name, price, inStoke);
 
-    // Конструктор с параметрами
-    public Mesh(String type, Color color) {
-        this.type = type;
-        this.color = color;
+        this.type = "0";
+        this.color = Color.BLACK;
     }
 
     /* Свойства */

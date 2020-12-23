@@ -1,6 +1,7 @@
 package org.exTeam.business.products.remedies;
 
 import java.awt.*;
+import java.math.BigDecimal;
 
 /* Костюмы */
 public class Costume extends Remedies {
@@ -9,12 +10,11 @@ public class Costume extends Remedies {
 
     /* Конструктор */
     // Стандартный конструктор
-    public Costume() { }
+    public Costume(int article, String name, BigDecimal price, int inStoke) {
+        super(article, name, price, inStoke);
 
-    // Конструктор с параметрами
-    public Costume(String type, Color color) {
-        this.type = type;
-        this.color = color;
+        this.type = "0";
+        this.color = Color.BLACK;
     }
 
     /* Свойства */
