@@ -14,6 +14,7 @@ public class Order {
     private Date date; // Дата заказа
     private OrderStatus status; // Статус
 
+
     private ArrayList<Product> products; // Коллекция товаров в заказе
 
     /* Конструктор */
