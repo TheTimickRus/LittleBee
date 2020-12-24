@@ -29,8 +29,6 @@ public class Buyer {
 
     /* Методы */
     // Тестовый вывод
-
-
     @Override
     public String toString() {
         return "Buyer{" +

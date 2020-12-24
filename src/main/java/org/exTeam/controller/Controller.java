@@ -56,14 +56,14 @@ public class Controller {
     /* Работа с корзиной */
     // Добавить товар в корзину по артиклу
     @PostMapping("/addProductInCart")
-    public Cart addProductInCart(@RequestParam(value = "article") int article, @RequestParam(value = "id") UUID id) {
+    public Cart addProductInCart(@RequestParam(value = "article") int article, @RequestParam(value = "cartId") UUID cartId) {
         Product tmpProduct = ServiceWorker.products.stream()
                 .filter(product -> product.getArticle() == article)
                 .findFirst()
                 .get();
 
         Cart tmpCart = ServiceWorker.carts.stream()
-                .filter(cart -> cart.getId().equals(id))
+                .filter(cart -> cart.getId().equals(cartId))
                 .findFirst()
                 .get();
 
